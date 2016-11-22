@@ -19,7 +19,7 @@ Ansilbe通过SSH协议进行管理节点和远程节点之间的通信。理论�
 * ...
 
 ## 快速定位本书
-Google "Ansible入门" 或 访问网站 [Ansible入门](http://getansible.com/)
+Google "Ansible入门" 或 访问网站 [Ansible入门](http://getansible.com/) [http://getansible.com/](http://getansible.com/)
 
 ##本书资源
 
