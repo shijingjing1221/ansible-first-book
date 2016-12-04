@@ -1,7 +1,6 @@
 # Summary
 
 * Ansible Tower(更新中)
-* Ansible Tower(更新中)
 * [声明](sheng_ming.md)
 * [什么是Ansible](README.md)
    * Ansible Tower(更新中)
@@ -40,6 +39,7 @@
        * [Extra module的使用方法](extra_modulede_shi_yong_fang_fa.md)
        * [命令行查看module的用法](ming_ling_xing_cha_kan_module_de_yong_fa.md)
    * [最佳使用方法](zui_jia_shi_yong_fang_fa.md)
+* Ansible Tower(更新中)
 * [推荐的参考资料](tui_jian_de_can_kao_zi_liao.md)
    * [YAML语法基础](yamlyu_fa_ji_chu.md)
    * [待续](dai_xu.md)
