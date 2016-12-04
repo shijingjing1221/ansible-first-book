@@ -42,6 +42,7 @@
 * [Ansible Tower(更新中)](ansible_towergeng_xin_4e2d29.md)
    * 安装方法
    * 创建第一个Job
+   * 使用方法进阶
 * [推荐的参考资料](tui_jian_de_can_kao_zi_liao.md)
    * [YAML语法基础](yamlyu_fa_ji_chu.md)
    * [待续](dai_xu.md)
