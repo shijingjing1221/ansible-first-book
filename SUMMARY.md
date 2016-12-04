@@ -40,7 +40,7 @@
        * [命令行查看module的用法](ming_ling_xing_cha_kan_module_de_yong_fa.md)
    * [最佳使用方法](zui_jia_shi_yong_fang_fa.md)
 * [Ansible Tower(更新中)](ansible_towergeng_xin_4e2d29.md)
-   * [安装方法](tower/tower_an_zhuang_fang_fa.md)
+   * [安装方法](tower/an_zhuang_fang_fa_md.md)
    * [创建第一个Job](chuang_jian_di_yi_ge_job.md)
    * [使用方法进阶](shi_yong_fang_fa_jin_jie.md)
 * [推荐的参考资料](tui_jian_de_can_kao_zi_liao.md)
