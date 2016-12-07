@@ -12,7 +12,11 @@
 3. 运行 ./setup.sh
 
   请注意tower对硬件的要求：
-  http://docs.ansible.com/ansible-tower/3.0.3/html/installandreference/requirements_refguide.html#ir-requirements
+  * 2G+内存
+  * 20G专用硬盘
+  * 64位操作系统
+
+  更详细的，请看[这里](http://docs.ansible.com/ansible-tower/3.0.3/html/installandreference/requirements_refguide.html#ir-requirements)
  
 4. 修改admin的密码
   
