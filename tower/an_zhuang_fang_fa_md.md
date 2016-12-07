@@ -24,7 +24,7 @@
 
   1. 如果你安装ansible tower的hostname是ansibletower.example.com, 那么访问 https://ansibletower.example.com/
   2. 用第4步的用户名和密码登陆
-  3. 第一个页面如下
+  3. 第一次登陆后，会提供你提供licences文件。
   ![](http://docs.ansible.com/ansible-tower/latest/html/userguide/_images/no-license.png)
 
 6. 申请Licences
