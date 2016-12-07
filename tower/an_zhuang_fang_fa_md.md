@@ -33,4 +33,4 @@
 
 7. 你的第一个页面
 
-  ![](tower/main_dashboard.png)
+  ![](main_dashboard.png)
