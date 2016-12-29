@@ -1,11 +1,9 @@
 # Loop循环
 
-
-
 ## 标准循环
 
-
 为了保持简洁,重复的任务可以用以下简写的方式:
+
 ```
 - name: add several users
   user: name={{ item }} state=present groups=wheel
@@ -13,6 +11,7 @@
      - testuser1
      - testuser2
 ```
+
 如果你在变量文件中或者 ‘vars’ 区域定义了一组YAML列表,你也可以这样做:
 
 ```
@@ -24,7 +23,7 @@ tasks:
    with_items: "{{somelist}}"
 ```
 
-使用 ‘with_items’ 用于迭代的条目类型不仅仅支持简单的字符串列表.如果你有一个哈希列表,那么你可以用以下方式来引用子项:
+使用 ‘with\_items’ 用于迭代的条目类型不仅仅支持简单的字符串列表.如果你有一个哈希列表,那么你可以用以下方式来引用子项:
 
 ```
 - name: add several users
@@ -33,11 +32,10 @@ tasks:
     - { name: 'testuser1', groups: 'wheel' }
     - { name: 'testuser2', groups: 'root' }
 ```
-注意：如果同时使用 when 和 with_items （或其它循环声明）,`when`声明会为每个条目单独执行.请参见 the_when_statement 示例.
 
+注意：如果同时使用 when 和 with\_items （或其它循环声明）,`when`声明会为每个条目单独执行.请参见 the\_when\_statement 示例.
 
 ## 嵌套循环
-
 
 循环也可以嵌套:
 
@@ -59,7 +57,6 @@ tasks:
     - [ 'clientdb', 'employeedb', 'providerd']
 ```
 
-
 ## 对哈希表使用循环
 
 ```
@@ -79,10 +76,10 @@ tasks:
 
 ## 对文件列表使用循环
 
-with_fileglob 可以以非递归的方式来模式匹配单个目录中的文件.如下面所示:
+with\_fileglob 可以以非递归的方式来模式匹配单个目录中的文件.如下面所示:
 
 ```
-  tasks:
+tasks:
 
     # first ensure our target directory exists
     - file: dest=/etc/fooapp state=directory
@@ -91,5 +88,7 @@ with_fileglob 可以以非递归的方式来模式匹配单个目录中的文件
     - copy: src={{ item }} dest=/etc/fooapp/ owner=root mode=600
       with_fileglob:
         - /playbooks/files/fooapp/*
-
 ```
+
+
+
