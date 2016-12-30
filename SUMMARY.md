@@ -10,7 +10,6 @@
     * [Ansible用命令管理主机](ansibleyong_ming_ling_guan_li_zhu_ji.md)
     * [Ansible用脚本管理主机](ansibleyong_jiao_ben_guan_li_zhu_ji.md)
     * [Ansible模块Module](ansiblemo_kuai_module.md)
-        * [介绍几个常用的module](介绍几个常用的module.md)
 * [Ansible进阶](ansiblejin_jie.md)
     * [ansible的配置](ansiblede_pei_zhi.md)
     * [Host Inventory](zhu_ji_mu_lu_guan_li.md)
