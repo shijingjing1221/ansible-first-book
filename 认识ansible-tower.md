@@ -10,8 +10,6 @@
 
 回顾下安装后的第一个页面（如下图）。
 
-
-
 ![](/tower/main_dashboard.png)
 
 ## 主要版面
@@ -25,11 +23,17 @@
 * PROJECT
   * 每个PROJECT解决的是playbook脚本放置在哪的问题。PROJECT里面的playbook可以是tower上的本地文件夹，还可以是远程的git/svn repo。tower在合适的时间会下载到本地。
 * INVENTORIES
-  * tower的INVENTORIES和ansible命令行工具的inventory一样，配置需要管理的远程主机
+  * tower的INVENTORIES和ansible命令行工具的inventory一样，配置需要管理的远程主机。
 * JOB TEMPLATES
+  * 对应完成的执行一次ansible playbook所需要完整的信息。在一个JOB TEMPLATE中需要选择以下几个信息
+    * 选择需要inventory
+    * 选择需要project
+    * 选择project中需要执行的哪个playbook文件
 * JOBS
-
-
+  * 查看JOB的实时执行结果
+  * 记录JOB的执行历史和状态
 
 ![](https://www.ansible.com/hs-fs/hubfs/2016_Images/Resources/tower-setup-guide-1.png?t=1482430738929&width=604&height=113&name=tower-setup-guide-1.png)
+
+
 
