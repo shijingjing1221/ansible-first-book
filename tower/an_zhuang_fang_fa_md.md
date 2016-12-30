@@ -20,9 +20,12 @@ all-in-one版就是所有的ansible tower的组件，服务器，数据库都安
    1. 2G+内存
 
    2. 20G专用硬盘
+
    3. 64位操作系统
 
-             更详细的，请看[这里](http://docs.ansible.com/ansible-tower/3.0.3/html/installandreference/requirements_refguide.html#ir-requirements)
+      ```
+         更详细的，请看[这里](http://docs.ansible.com/ansible-tower/3.0.3/html/installandreference/requirements_refguide.html#ir-requirements)
+      ```
 
 ## 初始化网站
 
@@ -37,6 +40,7 @@ all-in-one版就是所有的ansible tower的组件，服务器，数据库都安
    1. 如果你安装ansible tower的hostname是ansibletower.example.com, 那么访问 [https://ansibletower.example.com/](https://ansibletower.example.com/)
 
    2. 用用户名admin和你修改后的密码登陆
+
    3. 第一次登陆后，会提供你提供licences文件。  
       ![](http://docs.ansible.com/ansible-tower/latest/html/userguide/_images/no-license.png)
 
@@ -48,5 +52,5 @@ Ansible Tower提供了免费使用的Licences，永不过期，不过限制在�
 
 1. 你的第一个页面
 
-![](main_dashboard.png)
+![](/tower/main_dashboard.png)
 
