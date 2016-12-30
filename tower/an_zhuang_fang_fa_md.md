@@ -23,9 +23,7 @@ all-in-one版就是所有的ansible tower的组件，服务器，数据库都安
 
    3. 64位操作系统
 
-      ```
-         更详细的，请看[这里](http://docs.ansible.com/ansible-tower/3.0.3/html/installandreference/requirements_refguide.html#ir-requirements)
-      ```
+   4. 更详细的，请看\[这里\]\(http://docs.ansible.com/ansible-tower/3.0.3/html/installandreference/requirements\_refguide.html\#ir-requirements\)
 
 ## 初始化网站
 
