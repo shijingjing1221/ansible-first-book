@@ -35,5 +35,18 @@
 
 ![](https://www.ansible.com/hs-fs/hubfs/2016_Images/Resources/tower-setup-guide-1.png?t=1482430738929&width=604&height=113&name=tower-setup-guide-1.png)
 
+## Admin菜单栏
 
+右侧的菜单栏主要是一些和管理员相关的功能。从左向右我用不同颜色标注了。
 
+* 红色
+  * 管理员页面，在这个页面上可以添加创建网站普通用户，管理员，团队和组织（Organization），并赋予相应的权限。【注】免费使用license不支持创建除了默认的组织之外的组织。
+* 蓝色
+  * 网站设置页面
+  * 管理员界面的功能，也可以在setting里面设置
+  * 查看LICENSE和tower版本信息
+  * 还可以设置下面几个常用的选项：
+    * CREDENTIALS：SSH的登陆key，或者登陆密码
+    * NOTIFICATION TEMPLATES： 通过Email和Xchat（Linux下的开源聊天软件）发消息时的配置。
+
+![](/tower/admin_menu.png)
