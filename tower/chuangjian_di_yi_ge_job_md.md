@@ -120,3 +120,5 @@ CREDENTIAL是用来登陆告诉Tower怎么来登陆或者连接远程的目标�
   ![](https://www.ansible.com/hs-fs/hubfs/2016_Images/Resources/tower-setup-guide-13.png?t=1482430738929&width=338&height=110&name=tower-setup-guide-13.png)
 
   蹦蹦蹦蹦，就自动跳转到JOBS页面下面实时看到结果啦。
+
+  ![](tower/first-demo-job-result.png)
