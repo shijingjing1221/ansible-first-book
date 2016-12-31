@@ -13,7 +13,27 @@ all-in-one版就是所有的ansible tower的组件，服务器，数据库都安
    2. 拷贝到准备安装tower的机器中
    3. 解压
       `tar xvf ansible-tower-setup-bundle-3.0.3-1.el7.tar.gz`
-2. 编辑 inventory
+2. 编辑 inventory  
+    解压后ansible-tower-setup-bundle-3.0.3-1的文件夹中默认的inventory是下面这样的，你需要至少修改下admin_password， redis_password， pg_password的值为你想设置的密码。
+   ```
+   [primary]
+   localhost ansible_connection=local
+
+   [secondary]
+
+   [database]
+
+   [all:vars]
+   admin_password='password'
+   redis_password='password'
+
+   pg_host=''
+   pg_port=''
+
+   pg_database='awx'
+   pg_username='awx'
+   pg_password='password'
+   ```
 3. 运行 ./setup.sh  
    1. 请注意tower对硬件的要求，如果没有达到下面的要求，执行安装脚本的过程会中断并提示硬件没有满足要求：
 
@@ -51,4 +71,3 @@ Ansible Tower提供了免费使用的Licences，永不过期，不过限制在�
 1. 你的第一个页面
 
 ![](/tower/main_dashboard.png)
-
