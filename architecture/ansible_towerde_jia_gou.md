@@ -12,7 +12,7 @@ Ansilbe Tower一款针对企业级的收费软件。
 
 
 ## Ansible Tower能做什么
-Ansile Tower则是针对解决企业级用户以上两个需求的，ansible tower是中心化ansible管理节点，它向管理员提供网站页面作为接口，来运行ansible脚本playbook。
+Ansile Tower则是针对解决企业级用户需求的，ansible tower是中心化ansible管理节点，它向管理员提供网站页面作为接口，来运行ansible脚本playbook。
 
 * 管理员在ansible tower上使用和分享主机的ssh key，但是不能查看和拷贝key文件。
 
@@ -23,5 +23,3 @@ Ansile Tower则是针对解决企业级用户以上两个需求的，ansible tow
 说了这么多，看下面这张架构图就清晰了：
 
 ![](ansible-tower-arti-2nd.png)
-
-
