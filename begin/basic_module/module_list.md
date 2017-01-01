@@ -4,17 +4,17 @@
 
 接下来介绍一些会在接下来的章节中用到的module，也是很常用的module。
 
-* [ping](begin/basic_module/module_ping.md)
-* [debug](begin/basic_module/module_debug.md)
-* [copy](begin/basic_module/module_copy.md)
-* [template](begin/basic_module/module_template.md)
-* [file](begin/basic_module/module_file.md)
-* [user](begin/basic_module/module_user.md)
-* [yum](begin/basic_module/module_yum.md)
-* [service](begin/basic_module/module_service.md)
-* [firewalld](begin/basic_module/module_firewalld.md)
-* [shell](begin/basic_module/module_shell.md)
-* [command](begin/basic_module/module_command.md)
+* [ping](module_ping.md)
+* [debug](module_debug.md)
+* [copy](module_copy.md)
+* [template](module_template.md)
+* [file](module_file.md)
+* [user](module_user.md)
+* [yum](module_yum.md)
+* [service](module_service.md)
+* [firewalld](module_firewalld.md)
+* [shell](module_shell.md)
+* [command](module_command.md)
 
 调试和测试类的module
 * ping - ping一下你的远程主机，如果可以通过ansible成功连接，那么返回pong
