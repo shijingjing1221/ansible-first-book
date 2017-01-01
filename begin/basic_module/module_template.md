@@ -1,0 +1,3 @@
+# template
+如果copy像httpd.conf这样的配置文件，需要根据远程节点的IP，需要修改httpd.conf,这时候就需要用到template
+从tower所在的机器上copy文件到远程节点上，只不过可以将文件中定义的变量替换成不同的值，然后再拷贝到远程节点。

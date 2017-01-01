@@ -16,7 +16,7 @@ bash无论在命令行上执行，还是bash脚本中，都需要调用cd、ls�
 在命令行中
 
 > -m后面接调用module的名字
-> 
+>
 > -a后面接调用module的参数
 
 ```
@@ -32,9 +32,9 @@ $ ansible web -m yum -a "name=httpd state=present"
 
 在playbook脚本中，tasks中的每一个action都是对module的一次调用。在每个action中：
 
-> 冒号:前面是module的名字
-> 
-> 冒号:后面是调用module的参数
+> 冒号前面是module的名字
+>
+> 冒号后面是调用module的参数
 
 ```
 ---
@@ -49,12 +49,13 @@ $ ansible web -m yum -a "name=httpd state=present"
 ```
 
 ## Module的特性
-* Module是通过命令或者Playbook可以执行的task的插件
 
-* Module是用Python写的。
+* 像Linux中的命令一样，Ansible的Module既上命令行调用，也可以用在Ansible的脚本Playbook中。
 
-* Ansible提供一些常用的Module http://docs.ansible.com/ansible/modules_by_category.html
+* 每个Module的参数和状态的判断，都取决于该module的具体实现，所以在使用他们之前都需要查阅该module对应的文档。
 
-* 通过命令ansible-doc可以查看module的用法
+  * 可以通过文档查看具体的用法： http://docs.ansible.com/ansible/list_of_all_modules.html
 
-* Ansible提供API，用户可以自己写Module
+  * 通过命令ansible-doc也可以查看module的用法
+
+* Ansible提供一些常用功能的Module，同时Ansible也提供API，让用户可以自己写Module，使用的编程语言是Python。

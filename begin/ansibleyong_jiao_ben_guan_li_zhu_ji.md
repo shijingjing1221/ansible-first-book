@@ -1,6 +1,6 @@
 # Ansible用脚本管理主机
 
-只有脚本才可以重用，避免总敲重复的代码。Ansible脚本的名字叫Playbook，使用的是YAML的格式，文件 以yml结尾。
+只有脚本才可以重用，避免总敲重复的代码。Ansible脚本的名字叫Playbook，使用的是YAML的格式，文件以yml结尾。
 
 注解：YAML和JSON类似，是一种表示数据的格式。
 
@@ -105,4 +105,3 @@ playbook deploy.yml包含下面几个关键字，每个关键字的含义：
 ```
 
 提供json和yml互转的在线网站： [http:\/\/www.json2yaml.com\/](http://www.json2yaml.com/)
-
