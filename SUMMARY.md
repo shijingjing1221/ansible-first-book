@@ -2,7 +2,7 @@
 
 * [声明](sheng_ming.md)
 * [什么是Ansible](README.md)
-* [Ansible的架构](architecture/chapter1.md)
+* [Ansible的架构](chapter1.md)
     * [Ansible Tower的架构](architecture/ansible_towerde_jia_gou.md)
 * [Ansible上手](begin/ansibleshang_shou.md)
     * [安装Ansile](begin/an_zhuang_ansile.md)
@@ -17,7 +17,7 @@
         * [远程主机的连接参数和变量](advance/inventory/zhi_ding_lian_jie_de_can_shu.md)
         * [按目录结构存储变量](advance/inventory/fen_zu_guan_li_wen_jian.md)
     * [Ansible的脚本\(Playbook\)](advance/playbook/playbook.md)
-        * [Playbook基本语法](advance/playbook/playbookji_ben_yu_fa.md)
+        * [Playbook基本语法](playbookji_ben_yu_fa.md)
             * [主机和用户\(hosts&user\)](advance/playbook/zhu_ji_he_yong_hu.md)
             * [执行的任务\(Tasks\)](advance/playbook/tasks.md)
             * [响应事件\(Handler\)](advance/playbook/handler.md)
