@@ -28,7 +28,7 @@ $ ansible web -m yum -a "name=httpd state=present"
 ```
 
 
-## Ansilbe在Playbook脚本使用Module
+## Ansible在Playbook脚本使用Module
 
 在playbook脚本中，tasks中的每一个action都是对module的一次调用。在每个action中：
 
