@@ -28,11 +28,11 @@
             * [把运行结果当做变量使用](advance/playbook/zhu_ce_bian_liang.md)
             * [文件模板中使用的变量](advance/playbook/tamplatezhong_shi_yong_bian_liang.md)
             * [用命令行传递参数](advance/playbook/yong_ming_ling_xing_chuan_di_can_shu.md)
-        * Playbok中的逻辑控制语句
+        * [Playbok中的逻辑控制语句](advance/playbook/logic_control_statement.md)
           * [条件语句when](advance/playbook/tiao_jian_xuan_ze.md)
           * [循环语句loop](advance/playbook/loopxun_huan.md)
           * [块语句block](advance/playbook/blockkuai.md)
-        * 如何重用Playbook
+        * [如何重用Playbook](advance/playbook/reuse_playbook.md)
           * [重用playbook\(include语句\)](advance/playbook/includeyu_ju.md)
           * [playbook的“函数"\(role语句\)](advance/playbook/roleyu_ju.md)
 
