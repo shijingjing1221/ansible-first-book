@@ -35,6 +35,7 @@
         * [如何重用Playbook](advance/playbook/reuse_playbook.md)
           * [重用playbook\(include语句\)](advance/playbook/includeyu_ju.md)
           * [playbook的“函数"\(role语句\)](advance/playbook/roleyu_ju.md)
+        * [利用tags执行部分tasks](advance/playbook/tags_statement.md)
     * [更多的Ansible模块\(Extra Modules\)](advance/module/mo_kuai_modules.md)
         * [Modules的分类](advance/module/modulesde_fen_lei.md)
         * [Extra module的使用方法](advance/module/extra_modulede_shi_yong_fang_fa.md)
