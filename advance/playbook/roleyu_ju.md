@@ -1,15 +1,16 @@
-# Role语句
+# Role - Playbook的“Package”
 
+Role比include更强大灵活的代码重用和分享机制。Include类似于编程语言中的include，是重用单个文件的，重用的功能有限。
 
-比include更强大的代码重用机制。一个role可以包含vars, tasks, and handlers等等. 通常一个role定义了如何完成一个特定的功能,比如安装Webservers可以写成一个role, 安装Database可以写成一个role。
+而Role类似于编程语言中的“Package”，可以重用一组文件形成完整的功能。例如安装和配置apache，需要tasks实现安装包和拷贝模版等，httpd.conf和index.html的模版文件，和handler文件实现重起功能。这些文件都可以放在一个role里面，供不同的playbook文件重用。
 
-Ansible提供了一个分享role的平台, https://galaxy.ansible.com/, 在galaxy上可以找到别人写好的role。
+Ansible非常提倡在playbook中使用role，并且提供了一个分享role的平台Ansible Galaxy, https://galaxy.ansible.com/, 在galaxy上可以找到别人写好的role。在后面的章节中，我们再详细介绍如果使用它。
 
 
 ## 定义role完整的目录结构
 
 
-在编程语言中，通过遵循特点的语法定义函数。**在ansible中,通过遵循特定的目录结构,就可以实现对role的定义.**。具体遵循的目录结构是什么呢？看下面的例子：
+**在ansible中,通过遵循特定的目录结构,就可以实现对role的定义。**。具体遵循的目录结构是什么呢？看下面的例子：
 
 下面的目录结构定义了一个role：名字为myrole。在site.yml，调用了这个role。
 
@@ -20,7 +21,7 @@ Ansible提供了一个分享role的平台, https://galaxy.ansible.com/, 在galax
             role的目录结构
         </td>
         <td>
-            site.yml中的调用role
+            site.yml中调用role
         </td>
     </tr>
     <tr>
@@ -67,19 +68,21 @@ roles/
 
 ansible并不要求role包含上述所有的目录及文件，根据role的功能需要加入对应的目录和文件。下面是每个目录和文件的功能。
 
-* 如果 roles/x/tasks/main.yml 存在, 其中列出的 tasks 将被添加到 play 中
+* 如果 roles/x/tasks/main.yml 存在, 其中列出的 tasks 将被添加到 play 中，所以这个文件也可以视作role的入口文件，想看role做了什么操作，可以从此文件看起。
 * 如果 roles/x/handlers/main.yml 存在, 其中列出的 handlers 将被添加到 play 中
 * 如果 roles/x/vars/main.yml 存在, 其中列出的 variables 将被添加到 play 中
 * 如果 roles/x/meta/main.yml 存在, 其中列出的 “角色依赖” 将被添加到 roles 列表中
-* roles/x/tasks/main.yml中所有tasks 可以引用 roles/x/{files,templates,tasks}中的文件，不需要指明文件的路径。
+* roles/x/tasks/main.yml中所有tasks，可以引用 roles/x/{files,templates,tasks}中的文件，不需要指明文件的路径。
 
-你自己在写role的时候，一般都要包含入口文件roles/x/tasks/main.yml，其它的文件和目录，可以根据需求选择加入。
+你自己在写role的时候，一般都要包含role入口文件roles/x/tasks/main.yml，其它的文件和目录，可以根据需求选择加入。
+
+学会写一个完整功能的role是一个想对复杂的过程，也是ansible中稍高级的使用方法。在本小节，我们重点介绍如何使用别人已经写好的role。在后面的章节中，我们会通过具体的示例来逐步介绍写role的所需的知识。
 
 ## 带参数的Role
 
-### 定义带参数的role
+### 参数在role中是如何定义的呢
 
- 定义一个带参数的role,名字是role_with_var,那么目录结构为
+ 定义一个带参数的role,名字是myrole,那么目录结构为
 
  ```
  main.yml
@@ -89,7 +92,7 @@ ansible并不要求role包含上述所有的目录及文件，根据role的功�
        main.yml
  ```
 
- 在roles/rolw_with_var/tasks/main.yml中,使用```{{ }}```定义的变量就可以了
+ 在roles/myrole/tasks/main.yml中,使用```{{ }}```定义的变量就可以了
 
  ```
  ---
@@ -99,15 +102,28 @@ ansible并不要求role包含上述所有的目录及文件，根据role的功�
 ```
 ### 使用带参数的role
 
-那么在main.yml就可以用如下的方法使用role_with_var
+那么在main.yml就可以用如下的方法使用myrole
 
 ```
 ---
 
 - hosts: webservers
   roles:
-    - { role: role_with_var, param: 'Call some_role for the 1st time' }
-    - { role: role_with_var, param: 'Call some_role for the 2nd time' }
+    - { role: myrole, param: 'Call some_role for the 1st time' }
+    - { role: myrole, param: 'Call some_role for the 2nd time' }
+```
+
+或者写成yml字典格式：
+
+```
+---
+
+- hosts: webservers
+  roles:
+    - role: myrole
+      param: 'Call some_role for the 1st time'
+    - role: myrole
+      param: 'Call some_role for the 2nd time'
 ```
 
 ### role指定默认的参数
@@ -119,13 +135,13 @@ ansible并不要求role包含上述所有的目录及文件，根据role的功�
 ```
 main.yml
 roles:
-  role_with_var
+  myrole
     tasks
       main.yml
     defaults
       main.yml
 ```
-在roles/role_with_var/defaults/main.yml中,使用yml的字典定义语法定义param的值,如下:
+在roles/myrole/defaults/main.yml中,使用yml的字典定义语法定义param的值,如下:
 ```
 param: "I am the default value"
 ```
@@ -147,20 +163,37 @@ param: "I am the default value"
 ## role与条件语句when一起执行
 
 
-下面的例子中,some_role只有在RedHat系列的server上才执行.
+下面的例子中,my_role只有在RedHat系列的server上才执行。
+
 ```
 ---
 
 - hosts: webservers
   roles:
-    - { role: some_role, when: "ansible_os_family == 'RedHat'" }
+    - { role: my_role, when: "ansible_os_family == 'RedHat'" }
+
+```
+
+同样也可以写成yml字典格式
+
+```
+---
+
+- hosts: webservers
+  roles:
+    - role: my_role
+      when: "ansible_os_family == 'RedHat'"
 
 ```
 
 
 ## roles和tasks的执行顺序
 
-pre_tasks > role > tasks > post_tasks
+如果一个playbook同时出现role和tasks，他们的调用顺序是什么样的呢？
+
+先揭晓答案，在根据实例来验证：
+
+**pre_tasks > role > tasks > post_tasks**
 
 ```
 ---
@@ -182,4 +215,32 @@ pre_tasks > role > tasks > post_tasks
   post_tasks:
     - name: post
       shell: echo 'goodbye'
+```
+
+执行的结果为：
+
+```
+PLAY [lb] **********************************************************************
+
+
+TASK [setup] *******************************************************************
+ok: [rhel7u3]
+
+TASK [pre] *********************************************************************
+changed: [rhel7u3]
+
+TASK [some_role : some role] ***************************************************
+ok: [rhel7u3] => {
+    "msg": "Im some role"
+}
+
+TASK [task] ********************************************************************
+changed: [rhel7u3]
+
+TASK [post] ********************************************************************
+changed: [rhel7u3]
+
+PLAY RECAP *********************************************************************
+rhel7u3                    : ok=5    changed=3    unreachable=0    failed=0
+
 ```

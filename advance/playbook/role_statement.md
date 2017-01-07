@@ -1,6 +1,6 @@
-# Role - Playbook的“函数”
+# Role - Playbook的“Package”
 
-Role比include更强大灵活的代码重用和分享机制。Include类似于编程语言中的include，是重用静态的代码和文件的，重用的功能 有限。
+Role比include更强大灵活的代码重用和分享机制。Include类似于编程语言中的include，是重用单个文件的，重用的功能有限。
 
 而Role类似于编程语言中的“函数”，可以重用一个完整的功能，例如安装和配置apache，需要
 * 安装包
