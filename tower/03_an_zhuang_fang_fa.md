@@ -15,6 +15,7 @@ all-in-one版就是所有的ansible tower的组件，服务器，数据库都安
       `tar xvf ansible-tower-setup-bundle-3.0.3-1.el7.tar.gz`
 2. 编辑 inventory  
     解压后ansible-tower-setup-bundle-3.0.3-1的文件夹中默认的inventory是下面这样的，你需要至少修改下admin_password， redis_password， pg_password的值为你想设置的密码。
+
    ```
    [primary]
    localhost ansible_connection=local
@@ -34,16 +35,17 @@ all-in-one版就是所有的ansible tower的组件，服务器，数据库都安
    pg_username='awx'
    pg_password='password'
    ```
+
 3. 运行 ./setup.sh  
-   1. 请注意tower对硬件的要求，如果没有达到下面的要求，执行安装脚本的过程会中断并提示硬件没有满足要求：
+   请注意tower对硬件的要求，如果没有达到下面的要求，执行安装脚本的过程会中断并提示硬件没有满足要求：
 
-   1. 2G+内存
+   * 2G+内存
 
-   2. 20G专用硬盘
+   * 20G专用硬盘
 
-   3. 64位操作系统
+   * 64位操作系统
 
-   4. 更详细的，请看\[这里\]\(http://docs.ansible.com/ansible-tower/3.0.3/html/installandreference/requirements\_refguide.html\#ir-requirements\)
+   * 更详细的，请看[这里](http://docs.ansible.com/ansible-tower/3.0.3/html/installandreference/requirements_refguide.html#ir-requirements)
 
 ## 初始化网站
 
