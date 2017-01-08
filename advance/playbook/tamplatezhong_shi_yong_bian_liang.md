@@ -1,10 +1,11 @@
 # 文件模板中使用的变量
 
 
-文件模板即template。Ansible使用的文件是python的一个j2的模板。
+template module在Ansible中非常常用，而它在使用的时候又没有显示的指定template文件中的值，所以有时候用户会对template文件中使用的变量感到困惑，所以在这里又重新强调下。
 
 ## template变量的定义
-在playbook中定义的变量，可以直接在template中使用。
+
+在playbook中定义的变量，可以直接在template中使用，同时facts变量也可以直接在template中使用，当然也包含在inventory里面定义的host和group变量。只要是在playbook中可以访问的变量，都可以在template文件中使用。
 
 下面的playbook脚本中使用了template module来拷贝文件index.html.j2，并且替换了index.html.j2中的变量为playbook中定义变量值。
 
@@ -39,7 +40,9 @@
 ```
 ## template变量的使用
 
-在template index.html.j2中可以直接使用系统变量和用户自定义的变量
+Ansible模版文件使用变量的语法是Python的template语言[Jinja2](http://jinja.pocoo.org/docs/dev/templates/#builtin-filters)。
+
+在下面的例子template index.html.j2中，直接使用了以下变量：
 
 * 系统变量 ** \{\{ ansible_hostname \}\} **, ** \{\{ ansible_default_ipv4.address \}\} **
 
@@ -48,16 +51,7 @@
 index.html.j2文件：  
 ```
 <html>
-<title>#46 Demo</title>
-
-<!--
-http://stackoverflow.com/questions/22223270/vertically-and-horizontally-center-a-div-with-css
-http://css-tricks.com/centering-in-the-unknown/
-http://jsfiddle.net/6PaXB/
--->
-
-<style>.block {text-align: center;margin-bottom:10px;}.block:before {content: '';display: inline-block;height: 100%;vertical-align: middle;margin-right: -0.25em;}.centered {display: inline-block;vertical-align: middle;width: 300px;}</style>
-
+<title>Demo</title>
 <body>
 <div class="block" style="height: 99%;">
     <div class="centered">

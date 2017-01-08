@@ -19,3 +19,5 @@
 
      - debug: msg="{{ result.stdout }}"
 ```
+
+注册变量经常和debug module一起使用，这样可以得到更多的关于执行错误的信息，帮助用户调试。
