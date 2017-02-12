@@ -96,8 +96,8 @@ tasks:
 
   通过下面的例子实测后，基于ansible1.9是不能调用include里面的handler的，不过基于ansible2.0+是可以调用include里面的handler的。所以在使用的时候注意你安装的ansible版本。
 
-  ```
-  ---
+```
+
   - hosts: lb
     user: root
     gather_facts: no
@@ -115,7 +115,8 @@ tasks:
       - include: handlers/handlers.yml
       - name: restart apache
         debug: msg="This is the handler restart apache"
-  ```
+```
+
 * Ansible允许的全局（或者叫plays）加include
 
   然而这种使用方式并不推荐，首先它不支持嵌入include，而且很多playbook的参数也不可以使用。
